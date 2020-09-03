@@ -1,0 +1,4 @@
+GDAL==3.0.4
+numpy
+pandas
+scipy
