@@ -2,3 +2,10 @@ GDAL==3.0.4
 numpy
 pandas
 scipy
+matplotlib
+laspy
+terrautils
+gpsphoto
+exifread
+piexif
+Pillow

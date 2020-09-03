@@ -27,5 +27,5 @@ RUN add-apt-repository ppa:ubuntugis/ppa
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
 
-ENTRYPOINT [ "/usr/bin/python3", "/opt/uav_peaks_temp.py" ]
+ENTRYPOINT [ "/usr/bin/python3", "/opt/uav_thermal_calibration.py" ]
 
