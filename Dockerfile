@@ -29,6 +29,6 @@ RUN export C_INCLUDE_PATH=/usr/include/gdal
 RUN wget https://exiftool.org/Image-ExifTool-12.05.tar.gz
 RUN tar -xvf Image-ExifTool-12.05.tar.gz
 RUN cd Image-ExifTool-12.05 && perl Makefile.PL && make test && make install
+RUN echo "export LANGUAGE=en_US.UTF-8">>~/.bash_profile
 
 ENTRYPOINT [ "/usr/bin/python3", "/opt/uav_thermal_calibration.py" ]
-
