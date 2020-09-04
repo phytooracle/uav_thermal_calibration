@@ -26,6 +26,9 @@ RUN ldconfig
 RUN add-apt-repository ppa:ubuntugis/ppa
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
+RUN wget https://exiftool.org/Image-ExifTool-12.05.tar.gz
+RUN tar -xvf Image-ExifTool-12.05.tar.gz
+RUN cd Image-ExifTool-12.05 && perl Makefile.PL && make test && make install
 
 ENTRYPOINT [ "/usr/bin/python3", "/opt/uav_thermal_calibration.py" ]
 
