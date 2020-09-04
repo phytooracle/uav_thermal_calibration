@@ -1,6 +1,6 @@
 GDAL==3.0.4
-numpy
-pandas
+numpy==1.19.1
+pandas==1.0.3
 scipy
 matplotlib
 laspy
