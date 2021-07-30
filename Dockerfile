@@ -26,9 +26,16 @@ RUN ldconfig
 RUN add-apt-repository ppa:ubuntugis/ppa
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
-RUN wget https://exiftool.org/Image-ExifTool-12.05.tar.gz
-RUN tar -xvf Image-ExifTool-12.05.tar.gz
-RUN cd Image-ExifTool-12.05 && perl Makefile.PL && make test && make install
+
+#Previous, deprecated EXIF tool version
+#RUN wget https://exiftool.org/Image-ExifTool-12.05.tar.gz
+#RUN tar -xvf Image-ExifTool-12.05.tar.gz
+#RUN cd Image-ExifTool-12.05 && perl Makefile.PL && make test && make install
+
+# New EXIF tool version
+RUN wget https://exiftool.org/Image-ExifTool-12.29.tar.gz
+RUN tar -xvf Image-ExifTool-12.29.tar.gz
+RUN cd Image-ExifTool-12.29 && perl Makefile.PL && make test && make install
 RUN echo "export LANGUAGE=en_US.UTF-8">>~/.bash_profile
 
 ENTRYPOINT [ "/usr/bin/python3", "/opt/uav_thermal_calibration.py" ]
